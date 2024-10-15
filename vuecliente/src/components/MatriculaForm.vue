@@ -1,7 +1,7 @@
 
 <template>
   <div>
-    <h2>Matricular Estudiante</h2>
+    <h2>Matricular Estudiante</h2> 
     <form @submit.prevent="submitMatricula">
       <div>
         <label for="estudiante">Estudiante:</label>
@@ -31,7 +31,7 @@
     data() {
       return {
         estudiantes: [],
-        cursos: [],
+        cursos: [], 
         matricula: {
           estudiante_id: '',
           curso_id: '',
@@ -44,7 +44,7 @@
     },
     created() {
       this.loadEstudiantes();
-      this.loadCursos();
+      this.loadCursos(); 
     },
     methods: {
       loadEstudiantes() {
@@ -64,7 +64,7 @@
           .catch(error => {
             console.error('Error obteniendo cursos:', error);
           });
-      },
+      }, 
       submitMatricula() {
         apiService.matricularEstudiante(this.matricula)
           .then(() => {

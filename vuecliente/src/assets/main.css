@@ -21,8 +21,8 @@ body {
 }
 
 /* Títulos */
-h1, h2 {
-    color: #348888;
+h1, h2, h3 {
+    color: #3E688C;
     text-align: center;
     font-weight: 500;
     margin-bottom: 20px;
@@ -33,10 +33,11 @@ form {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    background-color: #9EF8EE;
+    background-color: #F2E4D8;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
 }
 
 /* Etiquetas de los formularios */
@@ -73,6 +74,7 @@ button[type="submit"] {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-right: 10px;
 }
 
     button[type="submit"]:hover {
@@ -86,7 +88,7 @@ ul {
 }
 
 li {
-    background-color: #FA7F08;
+    background-color: #3E688C;
     color: white;
     padding: 10px;
     margin-bottom: 10px;
@@ -95,7 +97,7 @@ li {
 }
 
     li:hover {
-        background-color: #F24405;
+        background-color: #90A19D;
     }
 
 /* Estilos de Material Design para el formulario de matrícula */
@@ -114,4 +116,44 @@ div#app > div {
     margin-bottom: 20px;
 }
 
+/* Botones generales */
+button.btn {
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 5px;
+}
 
+    /* Estilo para botón "Editar" */
+    button.btn.editar {
+        background-color: #80BD01; /* Color principal de la paleta */
+        color: white;
+    }
+
+        button.btn.editar:hover {
+            background-color: #4E7300; /* Un tono más oscuro en hover */
+        }
+
+    /* Estilo para botón "Eliminar" */
+    button.btn.eliminar {
+        background-color: darkred; /* Color rojo para eliminar */
+        color: white;
+    }
+
+        button.btn.eliminar:hover {
+            background-color: indianred; /* Un tono más suave en hover */
+        }
+
+    /* Estilo para botón "Cancelar" */
+    button.btn.cancelar {
+        background-color: red; /* Color más suave para cancelar */ 
+        color: white;
+    }
+
+        button.btn.cancelar:hover {
+            background-color: indianred; /* Un tono más vivo en hover */
+        }
