@@ -20,7 +20,7 @@
         <div>
           <label for="primer_apellido">Descripción:</label>
           <input v-model="cursoForm.descripcion" type="text" required />
-        </div> 
+        </div>
         <button class="btn editar" type="submit">{{ cursoForm.id ? 'Actualizar' : 'Crear' }} Curso</button>
         <button type="button" @click="limpiarFormulario" class="btn cancelar">Cancelar</button>
       </form>
@@ -37,9 +37,11 @@
       return {
         cursos: [],
         cursoForm: {
-          id: null,
+          id: 0,
           nombre: '',
-          descripcion: ''
+          descripcion: '',
+          adicionado_por: 'Admin',
+          fecha_adicion: new Date().toISOString().slice(0, 10), // Fecha de nacimiento actual
         }
       };
     },
@@ -104,9 +106,11 @@
       // Limpiar formulario
       limpiarFormulario() {
         this.cursoForm = {
-          id: null,
+          id: 0,
           nombre: '',
-          descripcion: '' 
+          descripcion: '',
+          adicionado_por: 'Admin',
+          fecha_adicion: new Date().toISOString().slice(0, 10), // Fecha de nacimiento actual
         };
       }
     }

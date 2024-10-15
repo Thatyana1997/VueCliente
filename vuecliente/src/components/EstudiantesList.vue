@@ -14,6 +14,10 @@
       <h3>{{ estudianteForm.id ? 'Editar' : 'Agregar' }} Estudiante</h3>
       <form @submit.prevent="guardarEstudiante">
         <div>
+          <label for="identificacion">Identificación:</label>
+          <input v-model="estudianteForm.identificacion" type="text" required />
+        </div>
+        <div>
           <label for="nombre">Nombre:</label>
           <input v-model="estudianteForm.nombre" type="text" required />
         </div>
@@ -41,10 +45,16 @@
       return {
         estudiantes: [],
         estudianteForm: {
-          id: null,
+          id: 0,
+          identificacion: '',
           nombre: '',
           primer_apellido: '',
-          segundo_apellido: ''
+          segundo_apellido: '',
+          fecha_nacimiento: new Date().toISOString().slice(0, 10), // Fecha de nacimiento actual
+          adicionado_por: 'Admin',
+          fecha_adicion: new Date().toISOString().slice(0, 10), // Fecha de nacimiento actual
+          "modificado_por": '' ,
+          "fecha_modificacion": null
         }
       };
     },
@@ -76,6 +86,7 @@
               console.error('Error actualizando estudiante:', error);
             });
         } else {
+          console.log('Formulario a enviar:', this.estudianteForm);
           // Si no tiene id, creamos
           apiService.crearEstudiante(this.estudianteForm)
             .then(() => {
@@ -109,10 +120,16 @@
       // Limpiar formulario
       limpiarFormulario() {
         this.estudianteForm = {
-          id: null,
+          id: 0,
+          identificacion: '',
           nombre: '',
           primer_apellido: '',
-          segundo_apellido: ''
+          segundo_apellido: '',
+          fecha_nacimiento: new Date().toISOString().slice(0, 10), // Fecha de nacimiento actual
+          adicionado_por: 'Admin',
+          fecha_adicion: new Date().toISOString().slice(0, 10), // Fecha de nacimiento actual
+          "modificado_por": '',
+          "fecha_modificacion": null
         };
       }
     }
